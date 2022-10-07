@@ -1,0 +1,22 @@
+.all {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .main {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: calc(100vh - 3rem);
+    .pages {
+      overflow: auto;
+      display: flex;
+      flex-direction: row;
+      .page {
+        width: 50vw;
+        flex: none;
+      }
+    }
+  }
+}
