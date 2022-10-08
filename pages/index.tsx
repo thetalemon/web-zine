@@ -3,7 +3,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import React, {useEffect, useRef, useState, useCallback} from 'react'
 import styles from '../styles/Home.module.scss'
-import Footer from './components/footer';
 import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
@@ -89,8 +88,6 @@ const Home: NextPage = () => {
           </div>
         </section>
       </main>
-
-      {/* <Footer /> */}
     </div>
   )
 }
