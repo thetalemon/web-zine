@@ -27,6 +27,7 @@ const Home: NextPage = () => {
         pin: true,
         anticipatePin: 1,
         invalidateOnRefresh: true,
+        // markers:true
       },
     })
   },[])
@@ -51,7 +52,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <section className={styles.sction} id="main">
+        <section className={styles.section} id="main">
           <div className={styles.container}>
             <div className={styles.pagesWrapper} ref={pagesWrapperRef}>
               <div className={styles.pages} ref={pagesRef}>
@@ -89,7 +90,7 @@ const Home: NextPage = () => {
         </section>
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
