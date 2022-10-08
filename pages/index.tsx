@@ -4,7 +4,7 @@ import React, {useEffect, useRef, useCallback} from 'react'
 import styles from '../styles/Home.module.scss'
 import Page from './components/page'
 import PageLast from './components/pageLast'
-import { gsap } from "gsap";
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { IMAGE_LIST, createPublicImagePath } from '../data/images'
 
@@ -32,7 +32,7 @@ const Home: NextPage = () => {
     })
     gsap.to('main', {
       scrollTrigger: {
-        trigger: '#pages',
+        trigger: '#horizontal-scroll-section',
         start: 'top center',
         end: () => `+=${pagesElement.clientWidth - pagesWrapperElement.clientWidth + 200}`,
         scrub: true, 
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         }),
       },
     })
-  },[])
+},[])
 
   useEffect(() => {
     if (didEffect.current) return 
@@ -65,7 +65,7 @@ const Home: NextPage = () => {
     const pagesWrapperElement = pagesWrapperRef?.current;
     if(!pagesWrapperElement) return
     setupGsap(pagesElement, pagesWrapperElement)
-  }, [setupGsap])
+  }, [])
 
   return (
     <div>
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
         <section className={styles.section} id="horizontal-scroll-section">
           <div className={styles.container}>
             <div className={styles.pagesWrapper} ref={pagesWrapperRef}>
-              <div className={styles.pages} ref={pagesRef} id="pages">
+              <div className={styles.pages} ref={pagesRef}>
                 
                 {IMAGE_LIST.map((data) => {
                   return (<Page key={data.id} srcpath={createPublicImagePath(data.id.toString())}/>)
