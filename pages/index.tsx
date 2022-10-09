@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import React, {useEffect, useRef, useCallback} from 'react'
+import React, {useEffect, useRef} from 'react'
 import styles from '../styles/Home.module.scss'
 import Page from './components/page'
 import PageLast from './components/pageLast'
@@ -16,7 +16,7 @@ const Home: NextPage = () => {
   const pagesRef = useRef<HTMLDivElement | null >(null);
   const didEffect = React.useRef(false);
 
-  const setupGsap = useCallback((pagesElement: HTMLDivElement, pagesWrapperElement: HTMLDivElement) => {
+  const setupGsap = (pagesElement: HTMLDivElement, pagesWrapperElement: HTMLDivElement) => {
     gsap.to(pagesElement, {
       x: () => -(pagesElement.clientWidth - pagesWrapperElement.clientWidth),
       ease: 'none',
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         }),
       },
     })
-},[])
+}
 
   useEffect(() => {
     if (didEffect.current) return 
